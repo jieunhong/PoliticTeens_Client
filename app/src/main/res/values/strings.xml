@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PoliticTeens_Client</string>
+
+    <string name="tab1">CALLS</string>
+    <string name="tab2">CHATS</string>
+    <string name="tab3">CONTACTS</string>
+
+</resources>
