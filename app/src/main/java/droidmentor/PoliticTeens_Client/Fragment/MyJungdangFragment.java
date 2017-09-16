@@ -14,9 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import co.ceryle.segmentedbutton.SegmentedButtonGroup;
 import droidmentor.PoliticTeens_Client.R;
-import droidmentor.PoliticTeens_Client.ViewPagerAdapter;
 
 
 /**
@@ -55,7 +53,6 @@ public class MyJungdangFragment extends Fragment {
                 Fragment frag = new MyJungdangFragment_SearchJungdang();
                 tran.replace(R.id.my_jungdang_layout, frag);
                 tran.addToBackStack(null);
-                Log.d("ㅇㄴ","dfsf");
                 tran.commit();
             }
         });
