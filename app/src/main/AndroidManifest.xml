@@ -10,12 +10,15 @@
         android:layout_height="@dimen/actionBarSize"
         android:theme="@style/Theme.AppCompat.NoActionBar">
 
-        <activity android:name="droidmentor.PoliticTeens_Client.MainActivity">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name="droidmentor.PoliticTeens_Client.MainActivity">
+
         </activity>
     </application>
 
