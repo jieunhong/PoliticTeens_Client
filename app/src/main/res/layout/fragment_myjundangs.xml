@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/my_jungdang_layout"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:background="@color/colorBackground"
+
     android:layout_height="match_parent">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="115dp"
         >
-       <!-- <LinearLayout
+       <LinearLayout
             android:id="@+id/text_myjungdang"
             android:layout_width="fill_parent"
             android:layout_height="30dp"
@@ -20,14 +22,16 @@
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
-
+                android:text="내 정당"
                 android:textSize="15dp"
                 android:textColor="@color/colorText"
                 android:textAlignment="center"
                 android:gravity="center_vertical"
-                android:background="@color/colorPrimary"
+
+                android:background="@color/colorSelect"
                 />
             <TextView
+                android:id="@+id/search_jungdang"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
@@ -39,9 +43,8 @@
                 android:background="@color/colorPrimary"
                 />
 
-
-        </LinearLayout> -->
-
+               </LinearLayout>
+<!--
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp">
@@ -72,7 +75,8 @@
                 android:minHeight="10dp"/>
         </co.ceryle.segmentedbutton.SegmentedButtonGroup>
 
-    </LinearLayout>
+
+    </LinearLayout>-->
     </RelativeLayout>
 
 </RelativeLayout>

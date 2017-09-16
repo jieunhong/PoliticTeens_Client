@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/search_jungdang_layout"
+    android:layout_width="match_parent"
+    android:background="@color/colorBackground"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="115dp"
+        >
+        <LinearLayout
+            android:id="@+id/text_myjungdang"
+            android:layout_width="fill_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="내 정당"
+                android:textSize="15dp"
+                android:id="@+id/my_jungdang"
+                android:textColor="@color/colorText"
+                android:textAlignment="center"
+                android:gravity="center_vertical"
+                android:background="@color/colorPrimary"
+
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="정당 탐색"
+                android:textSize="15dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/colorText"
+                android:textAlignment="center"
+                android:background="@color/colorSelect"
+                />
+
+        </LinearLayout>
+
+        </RelativeLayout>
+
+</RelativeLayout>
