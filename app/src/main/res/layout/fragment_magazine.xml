@@ -5,12 +5,38 @@
     android:background="@color/colorBackground"
     tools:context="droidmentor.PoliticTeens_Client.Fragment.MyJungdangFragment">
 
+    <RelativeLayout
+        android:layout_marginTop="115dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/magazine_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="매거진"
-        android:layout_centerInParent="true"
-        android:textSize="30sp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorText"
+        android:text="MAGAZINE"
+        android:textSize="30dp" />
 
+    <android.support.v7.widget.RecyclerView
+        android:layout_margin="20dp"
+        android:id="@+id/magazine_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:padding="5dp"
+        android:scrollbars="vertical"
+        tools:listitem="@layout/magazine_item_post"
+        android:layout_below="@+id/magazine_title"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        />
+    </RelativeLayout>
 </RelativeLayout>

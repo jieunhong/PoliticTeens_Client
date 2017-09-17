@@ -40,7 +40,7 @@
             android:layout_height="220dp"
             android:scaleType="fitXY"
             android:layout_weight="1.09"
-
+            tools:listitem="@layout/congress_item_post"
             ></android.support.v7.widget.RecyclerView>
         <ImageView
             android:layout_margin="20dp"
