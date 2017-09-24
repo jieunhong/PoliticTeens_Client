@@ -1,5 +1,6 @@
 package droidmentor.PoliticTeens_Client;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -8,9 +9,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
+import android.widget.ListView;
 
 import droidmentor.PoliticTeens_Client.Fragment.CongressFragment;
 import droidmentor.PoliticTeens_Client.Fragment.MyJungdangFragment;
+import droidmentor.PoliticTeens_Client.Fragment.MyJungdangFragment_Null;
 import droidmentor.PoliticTeens_Client.Fragment.PlazaFragment;
 import droidmentor.PoliticTeens_Client.Fragment.MagazineFragment;
 
@@ -21,16 +28,24 @@ public class MainActivity extends AppCompatActivity {
 
     //This is our viewPager
     private ViewPager viewPager;
+    int result=0;
 
 
     //Fragments
 
     MyJungdangFragment myJungdangFragment;
-
+    MyJungdangFragment_Null myJungdangFragmentNull;
     CongressFragment congressFragment;
     PlazaFragment plazaFragment;
     MagazineFragment magazineFragment;
     MenuItem prevMenuItem;
+
+
+    private String[] navItems = {"Brown", "Cadet Blue", "Dark Olive Green",
+            "Dark Orange", "Golden Rod"};
+    private ListView lvNavList;
+    private FrameLayout flContainer;
+
 
 
     @Override
@@ -48,10 +63,43 @@ public class MainActivity extends AppCompatActivity {
         parent.setContentInsetsAbsolute(0, 0);
 
 
+
+
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         //Initializing the bottomNavigationView
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
+
+        /*lvNavList = (ListView)findViewById(R.id.activity_main_setting);
+        flContainer = (FrameLayout)findViewById(R.id.fl_activity_main_container);
+
+        lvNavList.setAdapter(
+                new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, navItems));
+        lvNavList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                switch(position){
+                    case 0:
+                        flContainer.setBackgroundColor(Color.parseColor("#A52A2A"));
+                        break;
+                    case 1:
+                        flContainer.setBackgroundColor(Color.parseColor("#5F9EA0"));
+                        break;
+                    case 2:
+                        flContainer.setBackgroundColor(Color.parseColor("#556B2F"));
+                        break;
+                    case 3:
+                        flContainer.setBackgroundColor(Color.parseColor("#FF8C00"));
+                        break;
+                    case 4:
+                        flContainer.setBackgroundColor(Color.parseColor("#DAA520"));
+                        break;
+
+                }
+            }
+        });*/
+
+
 
         bottomNavigationView.setOnNavigationItemSelectedListener(
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -123,9 +171,11 @@ public class MainActivity extends AppCompatActivity {
         myJungdangFragment = new MyJungdangFragment();
         plazaFragment = new PlazaFragment();
         magazineFragment = new MagazineFragment();
-
+        myJungdangFragmentNull = new MyJungdangFragment_Null();
         adapter.addFragment(congressFragment);
-        adapter.addFragment(myJungdangFragment);
+
+        if(result==1) adapter.addFragment(myJungdangFragmentNull);
+        else adapter.addFragment(myJungdangFragment);
         adapter.addFragment(plazaFragment);
         adapter.addFragment(magazineFragment);
         viewPager.setAdapter(adapter);

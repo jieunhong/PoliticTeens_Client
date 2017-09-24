@@ -4,6 +4,7 @@
     android:orientation="vertical"
     android:id="@+id/search_jungdang_layout"
     android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/colorBackground"
     android:layout_height="match_parent">
 
@@ -106,6 +107,7 @@
                 android:textColor="@color/colorText"
                 android:background="@drawable/search_back"/>
             <ImageButton
+                android:id="@+id/go_search"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 />
@@ -118,7 +120,7 @@
             app:rowMode="stretch"
             app:selectionMode="true"
             app:tagBackground="@drawable/item_bg_1"
-            app:tagTextColor="#E5E5E5"
+            app:tagTextColor="@color/colorText"
             android:layout_margin="20dp"/>
         <ImageView
             android:layout_margin="20dp"
@@ -141,6 +143,7 @@
             android:text="HOT정당" />
 
         <android.support.v7.widget.RecyclerView
+            tools:listitem="@layout/myjungdang_search_item_post"
             android:layout_below="@id/hot_title"
             android:id="@+id/hot_jungdang"
             android:layout_width="match_parent"
@@ -150,7 +153,9 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginBottom="12dp"/>
+            android:layout_marginBottom="12dp"
+
+            />
 
 
     </RelativeLayout>

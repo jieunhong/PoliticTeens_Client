@@ -1,6 +1,7 @@
 package droidmentor.PoliticTeens_Client.Fragment;
 
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
@@ -13,6 +14,7 @@ import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,7 +23,9 @@ import com.greenfrvr.hashtagview.HashtagView;
 import java.util.Arrays;
 import java.util.List;
 
+import droidmentor.PoliticTeens_Client.MainActivity;
 import droidmentor.PoliticTeens_Client.R;
+import droidmentor.PoliticTeens_Client.SearchActivity;
 
 
 /**
@@ -31,6 +35,7 @@ public class MyJungdangFragment_SearchJungdang extends Fragment {
 
     FragmentManager manager;  //Fragment를 관리하는 클래스의 참조변수
     FragmentTransaction tran;  //실제로 Fragment를 추가/삭제/재배치 하는 클래스의 참조변수
+    ImageButton go_search;
     HashtagView hashtagView2;
     public static final List<String> DATA = Arrays.asList("android", "library", "collection",
             "hashtags", "min14sdk", "UI", "view", "github", "opensource", "project", "widget");
@@ -57,11 +62,9 @@ public class MyJungdangFragment_SearchJungdang extends Fragment {
         my.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tran = manager.beginTransaction();
-                Fragment frag = new MyJungdangFragment();
-                tran.replace(R.id.search_jungdang_layout, frag);
-                tran.addToBackStack(null);
-                tran.commit();
+                manager.beginTransaction().remove(MyJungdangFragment_SearchJungdang.this).commit();
+                manager.popBackStack();
+
             }
         });
 
@@ -70,7 +73,7 @@ public class MyJungdangFragment_SearchJungdang extends Fragment {
             @Override
             public CharSequence prepare(String item) {
                 SpannableString spannableString = new SpannableString("#" + item);
-                spannableString.setSpan(new ForegroundColorSpan(Color.parseColor("#85F5F5F5")), 0, 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                spannableString.setSpan(new ForegroundColorSpan(Color.parseColor("#26303D")), 0, 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
                 return spannableString;
             }
         });
@@ -82,6 +85,15 @@ public class MyJungdangFragment_SearchJungdang extends Fragment {
             }
         });
 
+        go_search = (ImageButton)view.findViewById(R.id.go_search);
+
+        go_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(),SearchActivity.class);
+                startActivity(intent);
+            }
+        });
         return view;
     }
 

@@ -2,13 +2,9 @@ package droidmentor.PoliticTeens_Client.Fragment;
 
 
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTabHost;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,12 +16,12 @@ import droidmentor.PoliticTeens_Client.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MyJungdangFragment extends Fragment {
+public class MyJungdangFragment_Null extends Fragment {
 
     FragmentManager manager;  //Fragment를 관리하는 클래스의 참조변수
     FragmentTransaction tran;  //실제로 Fragment를 추가/삭제/재배치 하는 클래스의 참조변수
 
-    public MyJungdangFragment() {
+    public MyJungdangFragment_Null() {
         // Required empty public constructor
     }
 
@@ -34,7 +30,7 @@ public class MyJungdangFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        View view = inflater.inflate(R.layout.fragment_myjundangs, container, false);
+        View view = inflater.inflate(R.layout.fragment_myjungdangs_null, container, false);
 
         manager = (FragmentManager) getFragmentManager();
 
